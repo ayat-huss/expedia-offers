@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  expediaoffers:
+    build: .
+    container_name: expedia_app
+    ports:
+      - "8080:8080"
+    environment:
+      EXPEDIA_BASE_URL: "https://offersvc.expedia.com/offers/v2/getOffers"
+      EXPEDIA_SCENARIO: "deal-finder"
+      EXPEDIA_PAGE: "foo"
+      EXPEDIA_UID: "test"
+      EXPEDIA_PRODUCT_TYPE: "Package"
+      EXPEDIA_CLIENT_ID: "test"
+      LOGGING_LEVEL_ORG_SPRINGFRAMEWORK: "INFO"
+      LOGGING_LEVEL_COM_EXPEDIA: "DEBUG"
+      LOGGING_LEVEL_ROOT: "ERROR"
+    networks:
+      - expedia_network
+
+networks:
+  expedia_network:

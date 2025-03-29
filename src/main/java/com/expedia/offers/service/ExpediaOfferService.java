@@ -21,6 +21,8 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class ExpediaOfferService {
+	
+	
 	private final ObjectMapper objectMapper;
 	private final RestTemplate restTemplate;
 
