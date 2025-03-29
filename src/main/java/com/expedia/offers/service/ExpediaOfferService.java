@@ -69,11 +69,11 @@ public class ExpediaOfferService {
 			 
 			String jsonResponse = restTemplate.getForObject(url, String.class);
 
-			// Parse JSON
+			 
 			JsonNode rootNode = objectMapper.readTree(jsonResponse);
 			List<OfferDTO> offers = new ArrayList<>();
 
-			// Extract package offers
+			 
 			JsonNode packages = rootNode.path("offers").path("Package");
 			if (packages.isArray()) {
 				for (JsonNode packageNode : packages) {

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-	fetchOffers(); // Load all offers initially
+	fetchOffers();  
 });
 
 let currentPage = 1;
@@ -30,9 +30,9 @@ function renderHotelCards() {
 
 	const paginationContainer = document.querySelector(".pagination");
 
-    hotelCardsContainer.innerHTML = ""; // Clear existing cards
+    hotelCardsContainer.innerHTML = ""; 
 
-    // Show error message if no results are found
+    
     if (filteredOffers.length === 0) {
         noResultsMessage.classList.remove("d-none");
         paginationContainer.classList.add("d-none"); // Hide pagination if no results
@@ -70,7 +70,7 @@ function changePage(direction) {
 	const totalPages = Math.ceil(filteredOffers.length / itemsPerPage);
 
 	if ((direction === -1 && currentPage === 1) || (direction === 1 && currentPage >= totalPages)) {
-		return; // Prevent going out of bounds
+		return;  
 	}
 
 	currentPage += direction;
@@ -80,7 +80,7 @@ function changePage(direction) {
  function searchOffers() {
     const searchButton = document.querySelector(".search-btn");
 
-    if (!searchButton) return; // Ensure the button exists
+    if (!searchButton) return;  
 
     const originalButtonText = searchButton.innerHTML;
 
@@ -93,13 +93,13 @@ function changePage(direction) {
 
     fetchOffers(originCity, destinationCity)
         .then(() => {
-            // Ensure UI updates after data load
+             
             renderHotelCards();
             updatePaginationButtons();
         })
         .catch(error => console.error("Error fetching offers:", error))
         .finally(() => {
-            // Restore button state AFTER successful or failed request
+           
             searchButton.disabled = false;
             searchButton.innerHTML = originalButtonText;
         });

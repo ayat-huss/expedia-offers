@@ -26,12 +26,6 @@ public class OfferDTO {
         this.destinationCity = destinationCity;
     }
 
-	@Override
-	public String toString() {
-		return "OfferDTO [hotelName=" + hotelName + ", from=" + from + ", to=" + to + ", offerPrice=" + offerPrice
-				+ ", image=" + image + ", travelEndDate=" + travelEndDate + ", originCity=" + originCity
-				+ ", destinationCity=" + destinationCity + "]";
-	}
-    
+	 
     
 }
