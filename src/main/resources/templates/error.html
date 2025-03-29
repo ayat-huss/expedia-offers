@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="header :: head"></head>
+
+<body>
+	<div class="container mt-5">
+		<h2 class="text-center mb-4">😞 Something Went Wrong</h2>
+
+		<!-- Error Message -->
+		<div class="row justify-content-center">
+			<div class="col-md-8 text-center">
+				<div class="alert alert-danger" role="alert">
+					<i class="fas fa-exclamation-circle">
+					</i> An unexpected error occurred while processing your request. Please try again later.
+				</div>
+				
+				 <p th:text="${errorMessage}"></p>
+				 
+				 
+				<div class="mt-4">
+					<a href="/" class="btn btn-primary">Go to Homepage</a>
+					 
+				</div>
+			</div>
+		</div>
+
+		 
+	</div>
+	
+</body>
+</html>

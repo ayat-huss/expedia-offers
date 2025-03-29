@@ -1,0 +1,17 @@
+expedia:
+  base-url: "https://offersvc.expedia.com/offers/v2/getOffers"
+  scenario: "deal-finder"
+  page: "foo"
+  uid: "test"
+  productType: "Package"
+  clientId: "test"
+
+ 
+logging:
+  level:
+    org.springframework: INFO
+    com.expedia : DEBUG
+    root: ERROR
+
+
+ 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="header :: head"></head>
+
+<body>
+	<div class="container mt-5">
+		<h2 class="text-center mb-4">🏨 Expedia Hotel Package Offers</h2>
+
+		<!-- Search Form -->
+		<form id="searchForm" class="search-form"
+			onsubmit="event.preventDefault(); searchOffers();">
+			<div class="row g-3">
+				<div class="col-md-5">
+					<div class="input-group">
+						<span class="input-group-text"><i
+							class="fas fa-map-marker-alt"></i></span> <input type="text"
+							id="originCity" class="form-control" placeholder="Origin City">
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="input-group">
+						<span class="input-group-text"><i class="fas fa-plane"></i></span>
+						<input type="text" id="destinationCity" class="form-control"
+							placeholder="Destination City">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<button type="submit" class="btn search-btn w-100">
+						<i class="fas fa-search"></i> Search
+					</button>
+				</div>
+			</div>
+		</form>
+
+		<div id="hotelCardsContainer" class="row"></div>
+		
+		
+		<!-- No Results Found Message -->
+		<div id="noResultsMessage" class="d-none text-center">
+			<div class="card p-4 shadow-sm border-0 rounded-lg bg-light">
+				<div class="d-flex justify-content-center align-items-center">
+					<i class="fas fa-search-slash me-3"
+						style="font-size: 1.5rem; color: #ffcc00;"></i>
+					<div class="text-muted fw-bold" style="font-size: 1.1rem;">
+						Sorry, No Travel Offers Found.</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		<nav>
+			<ul class="pagination justify-content-center d-none" id="pagination">
+				<li class="page-item">
+					<button class="page-link" id="prevPage" onclick="changePage(-1)">Previous</button>
+				</li>
+				<li class="page-item">
+					<button class="page-link" id="nextPage" onclick="changePage(1)">Next</button>
+				</li>
+			</ul>
+		</nav>
+
+	</div>
+	<script src="/js/offers.js"></script>
+
+
+
+
+</body>
+
+</html>
